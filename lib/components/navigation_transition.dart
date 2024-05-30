@@ -29,8 +29,3 @@ void navigateWithSlideTransition(BuildContext context, Widget screen) {
     ),
   );
 }
-
-
-void navigateHomeWithSlideTransition(BuildContext context) {
-  Navigator.of(context).popUntil((route) => route.isFirst);
-}

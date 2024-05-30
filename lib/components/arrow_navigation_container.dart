@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mhgap_urdu/components/navigation_transition.dart';
 import 'package:mhgap_urdu/components/text_components.dart';
+import 'package:mhgap_urdu/screens/home_screen.dart';
 import 'package:mhgap_urdu/utils/colors.dart';
 
 class ArrowNavigationContainer extends StatelessWidget {
@@ -80,7 +81,7 @@ class ArrowNavigationContainer extends StatelessWidget {
                     icon: const Icon(Icons.remove_red_eye,
                         color: sideBarTextColor),
                     onPressed: () {
-                      navigateHomeWithSlideTransition(context);
+                      navigateWithSlideTransition(context, const SudHomeScreen());
                     },
                   ),
                 ),

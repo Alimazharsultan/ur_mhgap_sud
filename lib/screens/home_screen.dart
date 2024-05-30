@@ -92,10 +92,115 @@ class HomeScreenContent extends StatefulWidget {
 
   @override
   // ignore: library_private_types_in_public_api
-  _HomeScreenContentState createState() => _HomeScreenContentState();
+  _HomeScreenContent createState() => _HomeScreenContent();
 }
 
-class _HomeScreenContentState extends State<HomeScreenContent> {
+class _HomeScreenContent extends State<HomeScreenContent> {
+  @override
+  void initState() {
+    super.initState();
+
+    // Check if screen is not null, then navigate after 1 second
+    if (widget.screen != null) {
+      Future.delayed(const Duration(milliseconds: 100), () {
+        navigateWithSlideTransition(context, widget.screen!);
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  navigateWithSlideTransition(context, const SudHomeScreen());
+                },
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.only(
+                      left: 20.0, right: 20, top: 20, bottom: 30.0),
+                  decoration: BoxDecoration(
+                    color: navigationBarColor, // The orange background color
+                    borderRadius: BorderRadius.circular(8.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black
+                            .withOpacity(0.3), // Shadow color with opacity
+                        offset:
+                            const Offset(0, 4), // Offset for the shadow (x, y)
+                        blurRadius: 4.0, // Blur radius for the shadow
+                      ),
+                    ], // Adjust for rounded corners
+                  ),
+                  child: const Text(
+                    'Substance Use Disorder (SUD) Module',
+                    style: TextStyle(
+                      color: Colors.white, // Text color
+                      fontSize: 16, // Adjust the font size as needed
+                      fontFamily:
+                          'Nastaliq', // Replace with the exact font if available
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          bottom: 0.0, // Adjusted value to make it visible
+          left: 0,
+          right: 0,
+          child: Container(
+            height: 160, // Specify a height to ensure visibility
+            padding: const EdgeInsets.only(top: 20),
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 215, 214, 214), // The orange background color
+              borderRadius: BorderRadius.circular(8.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black
+                      .withOpacity(0.4), // Shadow color with opacity
+                  offset: const Offset(0, 4), // Offset for the shadow (x, y)
+                  blurRadius: 4.0, // Blur radius for the shadow
+                ),
+              ], // Adjust for rounded corners
+            ),
+            child: GridView.count(
+              crossAxisCount: 2,
+              crossAxisSpacing: 30,
+              mainAxisSpacing: 5,
+              childAspectRatio: 3,
+              children: [
+                Image.asset('assets/images/logo2.png'),
+                Image.asset('assets/images/logo1.png'),
+                Image.asset('assets/images/logo3.png'),
+                Image.asset('assets/images/logo4.png'),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class SudHomeScreen extends StatefulWidget {
+  final Widget? screen;
+  const SudHomeScreen({super.key, this.screen});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _SudHomeScreenState createState() => _SudHomeScreenState();
+}
+
+class _SudHomeScreenState extends State<SudHomeScreen> {
   @override
   void initState() {
     super.initState();
@@ -135,7 +240,8 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                    color: const Color.fromRGBO(242, 242, 242, 1), // The orange background color
+                    color: const Color.fromRGBO(
+                        242, 242, 242, 1), // The orange background color
                     borderRadius: BorderRadius.circular(8.0),
                     boxShadow: [
                       BoxShadow(
