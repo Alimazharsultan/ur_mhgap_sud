@@ -23,15 +23,22 @@ class NextButton extends StatelessWidget {
           onTap: () {
             navigateWithSlideTransition(context, screen);
           },
-          child: Container(
+          child: Container( 
             width: double.infinity,
             padding:
                 const EdgeInsets.symmetric(horizontal: 50.0, vertical: 10.0),
             decoration: BoxDecoration(
               color: const Color.fromRGBO(
                   255, 121, 0, 1), // The orange background color
-              borderRadius:
-                  BorderRadius.circular(8.0), // Adjust for rounded corners
+              borderRadius: BorderRadius.circular(8.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black
+                      .withOpacity(0.3), // Shadow color with opacity
+                  offset: const Offset(0, 4), // Offset for the shadow (x, y)
+                  blurRadius: 4.0, // Blur radius for the shadow
+                ),
+              ], // Adjust for rounded corners
             ),
             child: Text(
               title,

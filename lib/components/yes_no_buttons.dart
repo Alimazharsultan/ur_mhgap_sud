@@ -31,8 +31,15 @@ class YesNoButtons extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: const Color.fromRGBO(
                         255, 121, 0, 1), // The orange background color
-                    borderRadius: BorderRadius.circular(
-                        10.0), // Adjust for rounded corners
+                    borderRadius: BorderRadius.circular(10.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black
+                            .withOpacity(0.3), // Shadow color with opacity
+                        offset: const Offset(0, 4), // Offset for the shadow (x, y)
+                        blurRadius: 4.0, // Blur radius for the shadow
+                      ),
+                    ], // Adjust for rounded corners
                   ),
                   child: const Text(
                     'نہیں',
@@ -57,8 +64,15 @@ class YesNoButtons extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: const Color.fromRGBO(
                         255, 121, 0, 1), // The orange background color
-                    borderRadius: BorderRadius.circular(
-                        10.0), // Adjust for rounded corners
+                    borderRadius: BorderRadius.circular(10.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black
+                            .withOpacity(0.3), // Shadow color with opacity
+                        offset: const Offset(0, 4), // Offset for the shadow (x, y)
+                        blurRadius: 4.0, // Blur radius for the shadow
+                      ),
+                    ], // Adjust for rounded corners
                   ),
                   child: const Text(
                     'جی',
