@@ -56,7 +56,7 @@ class _EmergencyDiagnosisScreenState extends State<EmergencyDiagnosisScreen> {
                   AssetImage('assets/images/chart_page-0001.jpg'),
                   width:
                       800, // Adjust the width and height according to your needs
-                  height: 16000,
+                  // height: 16000,
                 ),
                 fit: BoxFit.fill,
               ),
