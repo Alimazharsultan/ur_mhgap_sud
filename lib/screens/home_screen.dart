@@ -78,7 +78,6 @@ class HomeScreen extends StatelessWidget {
           return MaterialPageRoute(
             builder: (context) => Scaffold(
               body: HomeScreenContent(screen: screen),
-              bottomNavigationBar: const CustomBottomAppBar(),
             ),
           );
         },
@@ -125,8 +124,8 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
           child: GridView.count(
             crossAxisCount: 2,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 10,
+            crossAxisSpacing: 30,
+            mainAxisSpacing: 30,
             childAspectRatio: 1,
             children: cardList.map((card) {
               return GestureDetector(
@@ -134,8 +133,20 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                   navigateWithSlideTransition(
                       context, card["screen"] as Widget);
                 },
-                child: Card(
-                  color: const Color.fromRGBO(242, 242, 242, 1),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color.fromRGBO(242, 242, 242, 1), // The orange background color
+                    borderRadius: BorderRadius.circular(8.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black
+                            .withOpacity(0.3), // Shadow color with opacity
+                        offset:
+                            const Offset(0, 4), // Offset for the shadow (x, y)
+                        blurRadius: 4.0, // Blur radius for the shadow
+                      ),
+                    ], // Adjust for rounded corners
+                  ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -146,7 +157,7 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                         height: 65,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 20.0),
+                        padding: const EdgeInsets.only(top: 5.0),
                         child: BaseTextComponent(
                             text: card["title"] as String,
                             color: navigationBarColor),
