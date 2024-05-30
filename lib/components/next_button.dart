@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mhgap_urdu/components/navigation_transition.dart';
+import 'package:mhgap_urdu/utils/colors.dart';
 
 class NextButton extends StatelessWidget {
   final String title;
@@ -28,8 +29,7 @@ class NextButton extends StatelessWidget {
             padding:
                 const EdgeInsets.symmetric(horizontal: 50.0, vertical: 10.0),
             decoration: BoxDecoration(
-              color: const Color.fromRGBO(
-                  255, 121, 0, 1), // The orange background color
+              color: navigationBarColor, // The orange background color
               borderRadius: BorderRadius.circular(8.0),
               boxShadow: [
                 BoxShadow(
