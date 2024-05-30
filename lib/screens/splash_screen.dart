@@ -14,7 +14,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 60), () {
+    Timer(const Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => const MyApp(), // Navigate to the main app
