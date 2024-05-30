@@ -19,17 +19,26 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       appBar: CustomAppBar(
-        onLeadingPressed: () => scaffoldKey.currentState?.openDrawer(),
+        onLeadingPressed: () => scaffoldKey.currentState?.openEndDrawer(),
       ),
-      drawer: Drawer(
+      endDrawer: Drawer(
         backgroundColor: Colors.black,
         child: ListView(
           children: [
             ListTile(
-              leading: const Icon(Icons.close, color: sideBarTextColor),
-              title: const Text('Close',
-                  style: TextStyle(color: sideBarTextColor)),
-              onTap: () => scaffoldKey.currentState?.closeDrawer(),
+              leading: null, // Remove leading icon
+              trailing: const Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'Close',
+                    style: TextStyle(color: sideBarTextColor, fontSize: 16),
+                  ),
+                  SizedBox(width: 8),
+                  Icon(Icons.close, color: navigationBarColor),
+                ],
+              ),
+              onTap: () => scaffoldKey.currentState?.closeEndDrawer(),
             ),
             const Divider(color: sideBarTextColor),
             ...cardList.map((card) {
@@ -57,7 +66,7 @@ class HomeScreen extends StatelessWidget {
                     context,
                     HomeScreen(screen: card["screen"] as Widget),
                   );
-                  scaffoldKey.currentState?.closeDrawer();
+                  scaffoldKey.currentState?.closeEndDrawer();
                 },
               );
             }),

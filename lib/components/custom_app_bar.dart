@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mhgap_urdu/components/navigation_transition.dart';
 import 'package:mhgap_urdu/screens/home_screen.dart';
+import 'package:mhgap_urdu/utils/colors.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String titleText;
@@ -21,8 +22,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: const Color.fromRGBO(242, 242, 242, 1),
       leading: IconButton(
-        icon: const Icon(Icons.menu, color: Color.fromRGBO(33, 56, 124, 1)),
-        onPressed: onLeadingPressed,
+        icon: const Icon(Icons.home, color: followupHeadingColor),
+        onPressed: () {
+          navigateWithSlideTransition(context, HomeScreen());
+        },
       ),
       title: Align(
         alignment: Alignment.center,
@@ -31,14 +34,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             Text(
               titleText,
               style: const TextStyle(
-                  color: Color.fromRGBO(33, 56, 124, 1),
+                  color: headingColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 18),
             ),
             Text(
               subtitleText,
               style: const TextStyle(
-                color: Color.fromRGBO(33, 56, 124, 1),
+                color: headingColor,
                 fontSize: 14,
               ),
             ),
@@ -49,10 +52,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           [
             IconButton(
               icon:
-                  const Icon(Icons.home, color: Color.fromRGBO(33, 56, 124, 1)),
-              onPressed: () {
-                navigateWithSlideTransition(context, HomeScreen());
-              },
+                  const Icon(Icons.menu, color: followupHeadingColor),
+              onPressed: onLeadingPressed,
             ),
           ],
     );
