@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mhgap_urdu/utils/colors.dart';
 
 class OctagonalBadgePainter extends CustomPainter {
   final String text;
@@ -8,12 +9,12 @@ class OctagonalBadgePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.red
+      ..color = emergencyTextColor
       ..style = PaintingStyle.fill
       ..strokeWidth = 5;
 
     // Adjust these for finer control over the octagonal shape
-    double edgeInset = 18; // Smaller value gives sharper angles
+    double edgeInset = 25; // Smaller value gives sharper angles
     double width = size.width;
     double height = size.height;
 
@@ -30,16 +31,16 @@ class OctagonalBadgePainter extends CustomPainter {
     path.close();
 
     final trianglePaint = Paint()
-      ..color = Colors.red
+      ..color = emergencyTextColor
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 5;
+      ..strokeWidth = 6;
 
     canvas.drawPath(path, trianglePaint);
 
     // Draw the filled triangle at the bottom
     var trianglePath = Path();
-    double triangleBaseHeight = 20; // Adjust the size of the triangle
-    double triangleWidth = 60; // Adjust the width of the triangle
+    double triangleBaseHeight = 16; // Adjust the size of the triangle
+    double triangleWidth = 80; // Adjust the width of the triangle
 
     trianglePath.moveTo(width / 2 - triangleWidth / 2, height);
     trianglePath.lineTo(width / 2, height + triangleBaseHeight);
@@ -50,7 +51,7 @@ class OctagonalBadgePainter extends CustomPainter {
 
     // Text settings
     const textStyle = TextStyle(
-      color: Colors.red,
+      color: emergencyTextColor,
       fontSize: 12,
       fontWeight: FontWeight.bold,
       fontFamily: 'Nastaliq',
@@ -67,7 +68,7 @@ class OctagonalBadgePainter extends CustomPainter {
     );
     textPainter.layout(
       minWidth: 0,
-      maxWidth: width - 20,
+      maxWidth: width - 50,
     );
     final xCenter = (width - textPainter.width) / 2;
     final yCenter = (height - textPainter.height) / 2;

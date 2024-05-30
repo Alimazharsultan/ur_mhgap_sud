@@ -34,11 +34,11 @@ class _EmergencyDiagnosisScreenState extends State<EmergencyDiagnosisScreen> {
                 orangeText: EmergencyDiagnosisText.titleOrange),
             const SizedBox(height: 20),
             const CustomPaint(
-              size: Size(320, 90), // Adjust size to fit your needs
+              size: Size(320, 80), // Adjust size to fit your needs
               painter: OctagonalBadgePainter(
                   text: EmergencyDiagnosisText.octagonalText),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 30),
             ...EmergencyDiagnosisText.emergencyBulletPoints
                 .asMap()
                 .entries
@@ -49,23 +49,19 @@ class _EmergencyDiagnosisScreenState extends State<EmergencyDiagnosisScreen> {
                   boldText: boldText, normalText: normalText);
             }),
             const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: InteractiveViewer(
-                panEnabled: true, // Enables panning
-                minScale: 0.5, // Minimum scale factor for zoom-out
-                maxScale: 4.0, // Maximum scale factor for zoom-in
-                child: Image(
-                  image: ResizeImage(
-                    AssetImage('assets/images/chart_page-0001.jpg'),
-                    width:
-                        800, // Adjust the width and height according to your needs
-                    height: 16000,
-                  ),
-                  fit: BoxFit.fill,
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: Image(
+                image: ResizeImage(
+                  AssetImage('assets/images/chart_page-0001.jpg'),
+                  width:
+                      800, // Adjust the width and height according to your needs
+                  height: 16000,
                 ),
+                fit: BoxFit.fill,
               ),
-            )
+            ),
+
             // const ImageComponent(
             //   imagePath: 'assets/images/chart_page-0001.jpg',
             //   width: 400,
