@@ -125,14 +125,14 @@ class TitleText extends StatelessWidget {
   final bool addHorizontalPadding;
   final bool showDividerLine;
 
-  const TitleText(
-      {super.key,
-      required this.text,
-      this.color = headingColor,
-      this.addHorizontalPadding = false,
-      this.fontSize = titleTextSize,
-      this.showDividerLine = true,
-      });
+  const TitleText({
+    super.key,
+    required this.text,
+    this.color = headingColor,
+    this.addHorizontalPadding = false,
+    this.fontSize = titleTextSize,
+    this.showDividerLine = true,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -150,8 +150,7 @@ class TitleText extends StatelessWidget {
             fontWeight: FontWeight.bold,
             textAlign: TextAlign.center,
           ),
-          if (showDividerLine) 
-            const HeadingDividerLine(),
+          if (showDividerLine) const HeadingDividerLine(),
         ],
       ),
     );
@@ -369,6 +368,49 @@ class DescriptionText extends StatelessWidget {
   }
 }
 
+// class EmergencyTitleText extends StatelessWidget {
+//   final String redText;
+//   final String orangeText;
+
+//   const EmergencyTitleText(
+//       {super.key, required this.redText, required this.orangeText});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
+//         child: Align(
+//             alignment: AlignmentDirectional.center,
+//             child: RichText(
+//               textDirection: TextDirection.rtl,
+//               textAlign: TextAlign.center,
+//               text: TextSpan(
+//                 style: DefaultTextStyle.of(context).style,
+//                 children: <TextSpan>[
+//                   TextSpan(
+//                       text: redText,
+//                       style: const TextStyle(
+//                           color: emergencyTextColor,
+//                           fontSize: titleTextSize + 2,
+//                           fontWeight: FontWeight.bold,
+//                           fontFamily: 'Nastaliq',
+//                           height: 2,
+//                           decoration: TextDecoration.none)),
+//                   TextSpan(
+//                       text: orangeText,
+//                       style: const TextStyle(
+//                           color: navigationBarColor,
+//                           fontSize: titleTextSize + 2,
+//                           fontFamily: 'Nastaliq',
+//                           fontWeight: FontWeight.normal,
+//                           height: 2,
+//                           decoration: TextDecoration.none)),
+//                 ],
+//               ),
+//             )));
+//   }
+// }
+
 class EmergencyTitleText extends StatelessWidget {
   final String redText;
   final String orangeText;
@@ -380,38 +422,28 @@ class EmergencyTitleText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
-        child: Align(
-            alignment: AlignmentDirectional.center,
-            child: RichText(
-              textDirection: TextDirection.rtl,
-              textAlign: TextAlign.center,
-              text: TextSpan(
-                style: DefaultTextStyle.of(context).style,
-                children: <TextSpan>[
-                  TextSpan(
-                      text: redText,
-                      style: const TextStyle(
-                          color: emergencyTextColor,
-                          fontSize: titleTextSize + 2,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Nastaliq',
-                          height: 2,
-                          decoration: TextDecoration.none)),
-                  TextSpan(
-                      text: orangeText,
-                      style: const TextStyle(
-                          color: navigationBarColor,
-                          fontSize: titleTextSize + 2,
-                          fontFamily: 'Nastaliq',
-                          fontWeight: FontWeight.normal,
-                          height: 2,
-                          decoration: TextDecoration.none)),
-                ],
-              ),
-            )));
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            BaseTextComponent(
+              text: redText,
+              fontSize: titleTextSize + 2,
+              color: emergencyTextColor,
+              fontWeight: FontWeight.bold,
+              height: 2,
+            ),
+            BaseTextComponent(
+              text: orangeText,
+              fontSize: titleTextSize + 2,
+              color: navigationBarColor,
+              fontWeight: FontWeight.bold,
+              height: 2,
+              textAlign: TextAlign.right,
+            ),
+          ],
+        ));
   }
 }
-
 
 class CautionText extends StatelessWidget {
   const CautionText({

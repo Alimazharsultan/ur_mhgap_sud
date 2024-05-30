@@ -132,18 +132,18 @@ class EmergencyBulletPoints extends StatelessWidget {
                   boldText: boldText,
                   normalText: normalText,
                   horizontalPadding: 0,
+                  fontSize: normalTextSize - 3,
                   lineHeight: 2),
             ),
             Container(
-              padding: const EdgeInsets.only(bottom: 5),
               height: bulletSize,
               width: bulletSize,
               decoration: const BoxDecoration(
-                color: emergencyTextColor,
+                color: navigationBarColor,
                 shape: BoxShape.rectangle,
               ),
               margin: const EdgeInsets.only(
-                  left: 8, top: 30), // Space between bullet and text
+                  left: 8, top: 15), // Space between bullet and text
             ),
           ],
         ));

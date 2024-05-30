@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:mhgap_urdu/app.dart';
-import 'package:mhgap_urdu/components/custom_bottom_bar.dart';
 
 class MySplashScreen extends StatefulWidget {
   const MySplashScreen({super.key});
@@ -35,7 +34,6 @@ class _MySplashScreenState extends State<MySplashScreen> {
           ),
         ),
       ),
-      bottomNavigationBar: const CustomBottomAppBar(),
     );
   }
 }
