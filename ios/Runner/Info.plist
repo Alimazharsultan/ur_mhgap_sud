@@ -49,8 +49,7 @@
 	<string>App needs access to the downloads folder to save files.</string>
 	<key>NSFileProviderDomainUsageDescription</key>
 	<string>App needs access to the file provider domain to save files.</string>
-
-
+	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 </dict>
 </plist>
