@@ -26,14 +26,21 @@ class _MySplashScreenState extends State<MySplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/splash_screen.png'),
-            fit: BoxFit.cover,
+        body: Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(
+          maxWidth: 400, // Set your desired maximum width here
+        ),
+        child: Container(
+          // width: double.infinity, // Remove this line
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/splash_screen.png'),
+              fit: BoxFit.fill,
+            ),
           ),
         ),
       ),
-    );
+    ));
   }
 }

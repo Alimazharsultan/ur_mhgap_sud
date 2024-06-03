@@ -155,35 +155,54 @@ class _HomeScreenContent extends State<HomeScreenContent> {
           left: 0,
           right: 0,
           child: Container(
-            height: 160, // Specify a height to ensure visibility
-            padding: const EdgeInsets.only(top: 20),
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 248, 245, 245),
-              borderRadius: BorderRadius.circular(8.0),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black
-                      .withOpacity(0.4), // Shadow color with opacity
-                  offset: const Offset(0, 4), // Offset for the shadow (x, y)
-                  blurRadius: 4.0, // Blur radius for the shadow
-                ),
-              ], // Adjust for rounded corners
-            ),
-            child: GridView.count(
-              crossAxisCount: 2,
-              crossAxisSpacing: 30,
-              mainAxisSpacing: 5,
-              childAspectRatio: 3,
-              children: [
-                Image.asset(
-                  'assets/images/logo2.png',
-                ),
-                Image.asset('assets/images/logo1.png'),
-                Image.asset('assets/images/logo3.png'),
-                Image.asset('assets/images/logo4.png'),
-              ],
-            ),
-          ),
+              padding: const EdgeInsets.only(top: 20),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 248, 245, 245),
+                borderRadius: BorderRadius.circular(8.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black
+                        .withOpacity(0.4), // Shadow color with opacity
+                    offset: const Offset(0, 4), // Offset for the shadow (x, y)
+                    blurRadius: 4.0, // Blur radius for the shadow
+                  ),
+                ], // Adjust for rounded corners
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        width: 80, // set your desired width
+                        height: 80, // set your desired height
+                        child: Image.asset('assets/images/logo2.png'),
+                      ),
+                      Container(
+                        width: 80,
+                        height: 80,
+                        child: Image.asset('assets/images/logo1.png'),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 5), // space between rows
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        width: 100,
+                        height: 100,
+                        child: Image.asset('assets/images/logo3.png'),
+                      ),
+                      Container(
+                        width: 100,
+                        height: 100,
+                        child: Image.asset('assets/images/logo4.png'),
+                      ),
+                    ],
+                  ),
+                ],
+              )),
         ),
       ],
     );
