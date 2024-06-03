@@ -11,7 +11,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   const CustomAppBar({
     super.key,
-    this.titleText = 'mhGAP',
+    this.titleText = 'ur-mhGAP',
     this.subtitleText = 'Intervention Guide (SUD Module)',
     this.actions,
     this.onLeadingPressed,

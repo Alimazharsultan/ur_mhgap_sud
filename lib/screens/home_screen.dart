@@ -44,8 +44,9 @@ class HomeScreen extends StatelessWidget {
               // ignore: unused_local_variable
 
               return ListTile(
-                trailing:
-                    Image.asset(card['image'] as String, width: 35, height: 35),
+                trailing: Image.asset(card['image'] as String,
+                    width: card["englishTitle"] == "Management" ? 45 : 35,
+                    height: card["englishTitle"] == "Management" ? 55 : 35),
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -123,7 +124,7 @@ class _HomeScreenContent extends State<HomeScreenContent> {
                 child: Container(
                   width: double.infinity,
                   padding: const EdgeInsets.only(
-                      left: 20.0, right: 20, top: 20, bottom: 30.0),
+                      left: 20.0, right: 20, top: 15, bottom: 25.0),
                   decoration: BoxDecoration(
                     color: navigationBarColor, // The orange background color
                     borderRadius: BorderRadius.circular(8.0),
@@ -139,16 +140,10 @@ class _HomeScreenContent extends State<HomeScreenContent> {
                   ),
                   alignment: Alignment
                       .center, // Center the child both vertically and horizontally
-                  child: const Text(
-                    'Substance Use Disorder (SUD) Module',
-                    style: TextStyle(
-                      color: Colors.white, // Text color
-                      fontSize: 16, // Adjust the font size as needed
-                      fontFamily:
-                          'Nastaliq', // Replace with the exact font if available
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+                  child: const BaseTextComponent(
+                      text: 'Substance Use Disorder (SUD) Module',
+                      fontSize: 16,
+                      color: sideBarTextColor),
                 ),
               ),
             ],

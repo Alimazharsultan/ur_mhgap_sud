@@ -47,7 +47,7 @@ class AppearanceDiagnosisScreen extends StatelessWidget {
 
                         return Padding(
                           padding: const EdgeInsets.only(bottom: 10.0),
-                          child: Column(
+                          child: Column(  
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               BulletPoint(
