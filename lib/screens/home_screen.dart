@@ -142,7 +142,8 @@ class _HomeScreenContent extends State<HomeScreenContent> {
                       .center, // Center the child both vertically and horizontally
                   child: const BaseTextComponent(
                       text: 'Substance Use Disorder (SUD) Module',
-                      fontSize: 16,
+                      fontSize: 14,
+                      textAlign: TextAlign.center,
                       color: sideBarTextColor),
                 ),
               ),
