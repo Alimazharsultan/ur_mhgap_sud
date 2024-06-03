@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mhgap_urdu/components/arrow_navigation_container.dart';
-import 'package:mhgap_urdu/components/custom_bottom_bar.dart';
 import 'package:mhgap_urdu/components/navigation_transition.dart';
 import 'package:mhgap_urdu/components/custom_app_bar.dart';
 import 'package:mhgap_urdu/components/text_components.dart';
@@ -178,7 +177,7 @@ class _HomeScreenContent extends State<HomeScreenContent> {
               mainAxisSpacing: 5,
               childAspectRatio: 3,
               children: [
-                Image.asset('assets/images/logo2.png'),
+                Image.asset('assets/images/logo2.png',),
                 Image.asset('assets/images/logo1.png'),
                 Image.asset('assets/images/logo3.png'),
                 Image.asset('assets/images/logo4.png'),
@@ -259,8 +258,8 @@ class _SudHomeScreenState extends State<SudHomeScreen> {
                       Image.asset(
                         card['image'] as String,
                         fit: BoxFit.fill,
-                        width: 65,
-                        height: 65,
+                        width: card["image_width"] as double,
+                        height: card["image_height"] as double,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 5.0),

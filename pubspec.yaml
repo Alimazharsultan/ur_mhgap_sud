@@ -97,6 +97,10 @@ flutter:
     # - assets/images/chart_page-0004.jpg
     # - assets/images/chart_page-0005.jpg
     # - assets/images/chart_page-0006.jpg
+    - assets/images/assessment_icon.png
+    - assets/images/description_icon.png
+    - assets/images/management_icon.png
+    - assets/images/followup_icon.png
     - assets/images/logo1.png
     - assets/images/logo2.png
     - assets/images/logo3.png
