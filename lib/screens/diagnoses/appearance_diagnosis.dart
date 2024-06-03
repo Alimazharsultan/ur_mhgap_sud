@@ -52,7 +52,7 @@ class AppearanceDiagnosisScreen extends StatelessWidget {
                             children: [
                               BulletPoint(
                                   text: point["text"] as String,
-                                  horizontalPadding: 10),
+                                  horizontalPadding: 10, topMargin: 5,),
                               ...subBulletPoints,
                             ],
                           ),
