@@ -137,6 +137,8 @@ class _HomeScreenContent extends State<HomeScreenContent> {
                       ),
                     ], // Adjust for rounded corners
                   ),
+                  alignment: Alignment
+                      .center, // Center the child both vertically and horizontally
                   child: const Text(
                     'Substance Use Disorder (SUD) Module',
                     style: TextStyle(
@@ -160,7 +162,7 @@ class _HomeScreenContent extends State<HomeScreenContent> {
             height: 160, // Specify a height to ensure visibility
             padding: const EdgeInsets.only(top: 20),
             decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 215, 214, 214), // The orange background color
+              color: const Color.fromARGB(255, 248, 245, 245),
               borderRadius: BorderRadius.circular(8.0),
               boxShadow: [
                 BoxShadow(
@@ -177,7 +179,9 @@ class _HomeScreenContent extends State<HomeScreenContent> {
               mainAxisSpacing: 5,
               childAspectRatio: 3,
               children: [
-                Image.asset('assets/images/logo2.png',),
+                Image.asset(
+                  'assets/images/logo2.png',
+                ),
                 Image.asset('assets/images/logo1.png'),
                 Image.asset('assets/images/logo3.png'),
                 Image.asset('assets/images/logo4.png'),

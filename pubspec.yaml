@@ -106,6 +106,7 @@ flutter:
     - assets/images/logo3.png
     - assets/images/logo4.png
     - assets/images/splash_screen.png
+    - assets/images/home.png
     - assets/files/chart.pdf
 
   # An image asset can refer to one or more resolution-specific "variants", see
