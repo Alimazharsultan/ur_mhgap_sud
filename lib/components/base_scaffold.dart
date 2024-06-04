@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mhgap_urdu/components/custom_app_bar.dart';
 import 'package:mhgap_urdu/components/custom_bottom_bar.dart';
-import 'package:mhgap_urdu/components/navigation_transition.dart';
-import 'package:mhgap_urdu/utils/home_screen_list.dart';
 import 'package:mhgap_urdu/components/arrow_navigation_container.dart';
-import 'package:mhgap_urdu/utils/texts.dart';
 
 class BaseScreen extends StatelessWidget {
   final Widget body;

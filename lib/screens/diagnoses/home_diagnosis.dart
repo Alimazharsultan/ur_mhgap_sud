@@ -11,7 +11,6 @@ import 'package:mhgap_urdu/screens/diagnoses/psychoactive_diagnosis.dart';
 import 'package:mhgap_urdu/screens/diagnoses/first_stage_diagnosis.dart';
 import 'package:mhgap_urdu/screens/diagnoses/second_stage_diagnosis.dart';
 import 'package:mhgap_urdu/screens/diagnoses/third_stage_diagnosis.dart';
-import 'package:mhgap_urdu/utils/colors.dart';
 import 'package:mhgap_urdu/utils/texts.dart';
 
 class DiagnosisHomeScreen extends StatelessWidget {
