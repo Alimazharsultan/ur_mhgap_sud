@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mhgap_urdu/components/base_scaffold.dart';
-import 'package:mhgap_urdu/components/custom_text_buttons.dart';
 import 'package:mhgap_urdu/components/text_components.dart';
 import 'package:mhgap_urdu/utils/colors.dart';
 import 'package:mhgap_urdu/utils/texts.dart';
