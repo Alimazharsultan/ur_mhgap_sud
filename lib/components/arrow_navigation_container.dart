@@ -20,73 +20,75 @@ class ArrowNavigationContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         color: navigationBarColor,
-        height: 50,
+        padding: const EdgeInsets.symmetric(vertical: 5),
+        // height: 50,
         child: ConstrainedBox(
+          
           constraints: const BoxConstraints(
-            minHeight: 50.0,
+            minHeight: 40.0,
           ),
-          child: Stack(
-            children: <Widget>[
-              // Back arrow on the right
-              if (showBackButton)
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios,
-                        color: sideBarTextColor),
-                    onPressed: () => {Navigator.pop(context)},
-                  ),
-                ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    alignment: Alignment.centerRight,
-                    width: 160,
-                    child: Padding(
-                        padding: const EdgeInsets.only(right: 30),
-                        child: BaseTextComponent(
-                          text: text,
-                          color: sideBarTextColor,
-                        )),
-                  ),
+          child: Container(
+              child:
+                  // Back arrow on the right
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                if (showBackButton)
                   Align(
-                    alignment: Alignment.center,
-                    child: Container(
-                      height: 50, // Adjust the height to fit your design needs
-                      width:
-                          2, // Adjust the width for the thickness of the divider
-                      color: sideBarTextColor,
+                    alignment: Alignment.centerLeft,
+                    child: IconButton(
+                      icon: const Icon(Icons.remove_red_eye,
+                          color: sideBarTextColor),
+                      onPressed: () {
+                        navigateWithSlideTransition(
+                            context, const SudHomeScreen());
+                      },
                     ),
                   ),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    width: 160,
-                    child: const Padding(
-                      padding: EdgeInsets.only(left: 0),
+
+                Container(
+                  alignment: Alignment.centerRight,
+                  width: 130,
+                  child: Padding(
+                      padding: const EdgeInsets.only(right: 20),
                       child: BaseTextComponent(
-                        text: 'نشہ آور اشیاء کا استعمال',
+                        text: text,
                         color: sideBarTextColor,
-                        fontSize: normalTextSize,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              // Eye icon on the left
-              if (showBackButton)
+                      )),
+                ),
                 Align(
-                  alignment: Alignment.centerLeft,
-                  child: IconButton(
-                    icon: const Icon(Icons.remove_red_eye,
-                        color: sideBarTextColor),
-                    onPressed: () {
-                      navigateWithSlideTransition(context, const SudHomeScreen());
-                    },
+                  alignment: Alignment.center,
+                  child: Container(
+                    height: 50, // Adjust the height to fit your design needs
+                    width:
+                        2, // Adjust the width for the thickness of the divider
+                    color: sideBarTextColor,
                   ),
                 ),
-            ],
-          ),
+                Container(
+                  alignment: Alignment.centerRight,
+                  width: 130,
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 10),
+                    child: BaseTextComponent(
+                      text: 'نشہ آور اشیاء کا استعمال',
+                      color: sideBarTextColor,
+                      fontSize: normalTextSize,
+                    ),
+                  ),
+                ),
+
+                // Eye icon on the left
+                if (showBackButton)
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: IconButton(
+                      icon: const Icon(Icons.arrow_forward_ios,
+                          color: sideBarTextColor),
+                      onPressed: () => {Navigator.pop(context)},
+                    ),
+                  ),
+              ])),
         ));
   }
 }

@@ -42,32 +42,33 @@ class _CustomTextButtonState extends State<CustomTextButton> {
   @override
   Widget build(BuildContext context) {
     bool isActive = widget.currentDisplayedText == widget.displayText;
-    return Container(
-      height: 70,
-      decoration: BoxDecoration(
-        color: isActive ? navigationBarColor : sideBarTextColor,
-        border: widget.isCenter
-            ? const Border(
-                top: BorderSide(width: 2.0, color: navigationBarColor),
-                bottom: BorderSide(width: 2.0, color: navigationBarColor),
-              )
-            : Border.all(
-                color: navigationBarColor,
-                width: 2.0,
-              ),
-      ),
-      child: TextButton(
-        onPressed: () => updateText(widget.displayText),
-        style: TextButton.styleFrom(
-          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
-        ),
-        child: BaseTextComponent(
-          text: widget.buttonText,
-          color: isActive ? Colors.white : navigationBarColor,
-          textAlign: TextAlign.center,
-          fontSize: boxTextSize,
-        ),
-      ),
+    return IntrinsicHeight(
+      child: Container(
+          decoration: BoxDecoration(
+            color: isActive ? navigationBarColor : sideBarTextColor,
+            border: widget.isCenter
+                ? const Border(
+                    top: BorderSide(width: 2.0, color: navigationBarColor),
+                    bottom: BorderSide(width: 2.0, color: navigationBarColor),
+                  )
+                : Border.all(
+                    color: navigationBarColor,
+                    width: 2.0,
+                  ),
+          ),
+          child: TextButton(
+            onPressed: () => updateText(widget.displayText),
+            style: TextButton.styleFrom(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
+            ),
+            child: BaseTextComponent(
+              text: widget.buttonText,
+              color: isActive ? Colors.white : navigationBarColor,
+              textAlign: TextAlign.center,
+              fontSize: 16,
+            ),
+          )),
     );
   }
 }

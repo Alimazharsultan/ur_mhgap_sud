@@ -52,7 +52,7 @@ class BaseScaffold extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(top: 50.0),
+            padding: const EdgeInsets.only(top: 60.0),
             child: InteractiveViewer(
                 panEnabled: true, // Enables panning
                 minScale: 0.5, // Minimum scale factor for zoom-out
