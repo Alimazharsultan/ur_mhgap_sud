@@ -244,7 +244,7 @@ class _SudHomeScreenState extends State<SudHomeScreen> {
       Padding(
         padding: const EdgeInsets.only(top: 50.0),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
           child: GridView.count(
             crossAxisCount: 2,
             crossAxisSpacing: 30,

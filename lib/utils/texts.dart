@@ -24,7 +24,8 @@ class DescriptionScreenTexts {
           "کسی بھی نشہ آور شے  کا اتنی مقدار میں استعمال کہ  اس سےشدید منفی جسمانی یا ذہنی اثرات  پیدا ہوں۔"
     },
     {
-      "boldText": "نشہ چھوڑنے  کی صورت میں ظاہر ہونے والی علا مات (Withdrawal) ",
+      "boldText":
+          "نشہ چھوڑنے  کی صورت میں ظاہر ہونے والی علا مات (Withdrawal) ",
       "normalText":
           "یہ  نشہ لینے  کی مقدار میں اچانک رکاوٹ یا کمی کے بعد  ناخوشگوار علامات کا مجموعہ ہے۔ نشے کا زیادہ مقدار اور طویل دورانیے کا استمعال کیا جا ئے  تو وہ شخص جسمانی یا ذہنی طور پر اس  کا محتاج ہو جاتا ہے۔ بنیادی طور پر، جسم میں نشہ آور اشیاء  کی مقدار کم ہو نے یا نشہ چھوڑنے  کی صورت میں ظاہر ہونے والی علامات ، ان علامات کے  برعکس ہیں جو نشے   کے  استعمال کے نتیجےمیں  پیدا ہوتی ہیں۔ "
     },
@@ -142,7 +143,8 @@ class DiagnosisScreen {
 }
 
 class EmergencyDiagnosisText {
-  static const String navigationBarText = 'ایمرجنسی صورت حال میں   نشہ کی تشخیص: کیا شدید نشہ کرنے یا نشہ چھوڑنے  کا شبہ ہے؟';
+  static const String navigationBarText =
+      'ایمرجنسی صورت حال میں   نشہ کی تشخیص: کیا شدید نشہ کرنے یا نشہ چھوڑنے  کا شبہ ہے؟';
   static const String navigationText = 'ایمرجنسی';
   static const String titleRed = 'ہنگامی تشخیص:';
   static const String titleOrange =
@@ -189,7 +191,7 @@ class EmergencyDiagnosisText {
 
 class AppearanceDiagnosisText {
   static const String title =
-      "نشہ کے استعمال سے ہونے والے امراض کی ظاہر ی نوعیت";
+      "نشہ کے استعمال سے ہونے والے امراض کی ظاہری نوعیت";
   static const String subTitle1 = 'رابطہ کی تعداد سے متعلق تجاویز';
   // ignore: constant_identifier_names
   static const List bullet_points = [
@@ -219,7 +221,7 @@ class AppearanceDiagnosisText {
     },
     {
       "text":
-          'حادثاتی نتائج: خون کی شدید کمی(Macrocytic Anaemia ) پلیٹلیٹس کی تعداد میں کمی ، خلیوں کا بڑھا ہوا حجم(MCV)'
+          'حادثاتی نتائج: خون کی شدید کمی (Macrocytic Anaemia) پلیٹلیٹس کی تعداد میں کمی ، خلیوں کا بڑھا ہوا حجم (MCV)'
     },
     {
       "text":
@@ -240,7 +242,7 @@ class AppearanceDiagnosisText {
     },
     {
       "text":
-          'طبی مشورہ:صحت کی سہولیات طبی مراکز میں کام کرنے والے  تمامافراد سے تمبا کو اور شراب کے استعمال کے با رے میں پوچھنا  چاہئیے.'
+          'طبی مشورہ: صحت کی سہولیات طبی مراکز میں کام کرنے والے  تمامافراد سے تمبا کو اور شراب کے استعمال کے با رے میں پوچھنا  چاہئیے.'
     },
   ];
   // ignore: constant_identifier_names
@@ -299,7 +301,7 @@ class PsychoactiveDiagnoseText {
         {
           'buttonText': "طویل استعمال کے اثرات",
           'displayText':
-              "آنکھ کی پتلیوں کا سکڑنا، غنودگی اوربیٹھے بیٹھے سوجانا، ماحول سے ناشناسی(ہوش وحواش میں کمی)، سسترفتار میں بول  چال",
+              "آنکھ کی پتلیوں کا سکڑنا، غنودگی اوربیٹھے بیٹھے سوجانا، ماحول سے ناشناسی (ہوش وحواش میں کمی)، سسترفتار میں بول  چال",
         },
         {
           'buttonText': "نشہ چھوڑنے کے بعد کے علامات",
@@ -319,12 +321,12 @@ class PsychoactiveDiagnoseText {
         {
           'buttonText': "طویل استعمال کے اثرات",
           'displayText':
-              "(تمباکو نوشی کرنے والوں میں)پھیپھڑوں کی بیماری ، دل کی بیماری، کینسر کا خطرہ اور صحت پر دیگر اثرات",
+              "(تمباکو نوشی کرنے والوں میں) پھیپھڑوں کی بیماری ، دل کی بیماری، کینسر کا خطرہ اور صحت پر دیگر اثرات",
         },
         {
           'buttonText': "نشہ چھوڑنے کے بعد کے علامات",
           'displayText':
-              "چڑچڑاپن،نفرت آمیز خیالات((Hostility، تشویش ، گھبراہٹ، مایوسی ، بے زاری،  دل کی دھڑکن اور بھوک میں اضافہ",
+              "چڑچڑاپن،نفرت آمیز خیالات (Hostility، تشویش ، گھبراہٹ، مایوسی ، بے زاری،  دل کی دھڑکن اور بھوک میں اضافہ)",
         },
         {
           'buttonText': "رویوں پر شدید اثرات",
@@ -402,7 +404,7 @@ class PsychoactiveDiagnoseText {
         {
           'buttonText': "نشہ چھوڑنے کے بعد کے علامات",
           'displayText':
-              "بنیادی طور پر اوپیئڈ چھوڑنے کے اثرات اور کچھ سیر یٹونین نورا یپی نیفرین ری اپٹیک انہیبیٹر SNRI))چھوڑنے کی علامات (اداس مزاج، سستی)",
+              "بنیادی طور پر اوپیئڈ چھوڑنے کے اثرات اور کچھ سیر یٹونین نورا یپی نیفرین ری اپٹیک انہیبیٹر (SNRI) چھوڑنے کی علامات (اداس مزاج، سستی)",
         },
         {
           'buttonText': "رویوں پر شدید اثرات",
@@ -417,7 +419,7 @@ class PsychoactiveDiagnoseText {
         {
           'buttonText': "طویل استعمال کے اثرات",
           'displayText':
-              "وقوفی  اعمال میں کمی ، ڈیلیریم، پیریفرل نیوروپیتھی، دیگر اعصابی مسائل کا بڑھ جاناجس سے اچانک موت واقع ہوسکتی ہے(Arrythmias)۔",
+              "وقوفی  اعمال میں کمی ، ڈیلیریم، پیریفرل نیوروپیتھی، دیگر اعصابی مسائل کا بڑھ جاناجس سے اچانک موت واقع ہوسکتی ہے (Arrythmias)۔",
         },
         {
           'buttonText': "نشہ چھوڑنے کے بعد کے علامات",
@@ -492,7 +494,7 @@ class FirstStageDiagnosisScreenTexts {
   static const String diagnoseAdvice1 =
       'نشہ آوراشیاء   کا استعمال نہ کرنے سےصحت پر اسکےفوائد پر زور دیں۔';
   static const String diagnoseAdvice2 =
-      'ہر استعمال شدہ نشہ کی مختلف درجوں  کے خطرات کے بارے میں  تعلیم(psychoeducation) فراہم کریں';
+      'ہر استعمال شدہ نشہ کی مختلف درجوں  کے خطرات کے بارے میں  تعلیم (psychoeducation) فراہم کریں';
 }
 
 class SecondStageDiagnosisScreenTexts {
@@ -583,7 +585,7 @@ class SpecialPopulationScreenText {
   ];
   // WomenAdviceScreen
   static const population3Title =
-      'وہ خواتین جو بچے پیدا کرنے کی عمر کی ہیں، حاملہ ہیں، یا دودھ پلانے والی ہیں';
+      'وہ خواتین جو بچے  پیدا کرنے کی عمر کی ہیں، حاملہ ہیں، یا دودھ پلانے والی ہیں';
   static const population3Screen1 = 'شراب کا استعمال';
   static const population3Screen2 = 'منشیات کا استعمال';
 
@@ -695,7 +697,7 @@ class Protocol2AdministrativeSreenTexts {
   static const navigationRow1 = 'انحصار کی شدت کی جانچ کریں';
   static const List navigationRow1BulletPoints = [
     'اگر مناسب ہو تونشے کے جسم کے اثرات کو جسم سے ختم کرنے کے بعد شخص کواوپیائیڈ ایگونسٹ مینٹینس ٹریٹمنٹ(opioid agonist treatment)  جسے opioid substitution therapy بھی کہا جاتا ہے۔فراہم کریں۔',
-    'پرٹوکول5: اوپیائیڈ ایگونسٹ مینٹینس ٹریٹمنٹ opioid  maintenance treatmentپر جائیں۔'
+    'پرٹوکول5: اوپیائیڈ ایگونسٹ مینٹینس ٹریٹمنٹ opioid  maintenance treatment پر جائیں۔'
   ];
   static const navigationRow2 =
       'بقیہ صورتوں میں، اگر ضروری ہو تو منصوبہ بندی کے ساتھ نشہ کے جسم سے اخراج کا بندوبست کریں';
