@@ -24,6 +24,7 @@ class _EmergencyDiagnosisScreenState extends State<EmergencyDiagnosisScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return BaseScaffold(
       title: EmergencyDiagnosisText.navigationText,
       body: SingleChildScrollView(
@@ -49,13 +50,13 @@ class _EmergencyDiagnosisScreenState extends State<EmergencyDiagnosisScreen> {
                   boldText: boldText, normalText: normalText);
             }),
             const SizedBox(height: 10),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+            Padding(
+              padding: const EdgeInsets.only(right: 30),
               child: Image(
                 image: ResizeImage(
-                  AssetImage('assets/images/chart_page-0001.jpg'),
+                  const AssetImage('assets/images/chart.png'),
                   width:
-                      800, // Adjust the width and height according to your needs
+                      screenWidth.toInt(), // Adjust the width and height according to your needs
                   // height: 16000,
                 ),
                 fit: BoxFit.fill,

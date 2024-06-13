@@ -91,12 +91,13 @@ flutter:
     # - assets/images/emergency_diagnosis_5.png
     # - assets/images/emergency_diagnosis_6.png
     # - assets/images/emergency_diagnosis_7.png
-    - assets/images/chart_page-0001.jpg
+    # - assets/images/chart_page-0001.jpg
     # - assets/images/chart_page-0002.jpg
     # - assets/images/chart_page-0003.jpg
     # - assets/images/chart_page-0004.jpg
     # - assets/images/chart_page-0005.jpg
     # - assets/images/chart_page-0006.jpg
+    - assets/images/chart.png
     - assets/images/assessment_icon.png
     - assets/images/description_icon.png
     - assets/images/management_icon.png
