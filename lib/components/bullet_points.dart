@@ -143,7 +143,7 @@ class EmergencyBulletPoints extends StatelessWidget {
                 shape: BoxShape.rectangle,
               ),
               margin: const EdgeInsets.only(
-                  left: 8, top: 15), // Space between bullet and text
+                  left: 8, top: 22), // Space between bullet and text
             ),
           ],
         ));
