@@ -123,7 +123,7 @@ class EmergencyBulletPoints extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 50.0, vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 50.0, vertical: 10),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -132,8 +132,8 @@ class EmergencyBulletPoints extends StatelessWidget {
                   boldText: boldText,
                   normalText: normalText,
                   horizontalPadding: 0,
-                  fontSize: normalTextSize - 3,
-                  lineHeight: 2),
+                  fontSize: normalTextSize,
+                  lineHeight: 3),
             ),
             Container(
               height: bulletSize,

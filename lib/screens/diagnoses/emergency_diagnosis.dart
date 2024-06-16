@@ -4,22 +4,43 @@ import 'package:mhgap_urdu/components/bullet_points.dart';
 import 'package:mhgap_urdu/components/octagonal_container.dart';
 import 'package:mhgap_urdu/components/text_components.dart';
 import 'package:mhgap_urdu/utils/texts.dart';
+import 'package:flutter_pdfview/flutter_pdfview.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import 'dart:io';
 
 class EmergencyDiagnosisScreen extends StatefulWidget {
   const EmergencyDiagnosisScreen({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _EmergencyDiagnosisScreenState createState() =>
       _EmergencyDiagnosisScreenState();
 }
 
 class _EmergencyDiagnosisScreenState extends State<EmergencyDiagnosisScreen> {
   String? pdfPath;
+
   @override
   void initState() {
     super.initState();
-    // loadPdfFromAssets();
+    loadPdfFromAssets();
+  }
+
+  Future<void> loadPdfFromAssets() async {
+    try {
+      final dir = await getApplicationDocumentsDirectory();
+      final file = File('${dir.path}/chart.pdf');
+      if (!await file.exists()) {
+        final data = await rootBundle.load('assets/files/chart.pdf');
+        final bytes = data.buffer.asUint8List();
+        await file.writeAsBytes(bytes, flush: true);
+      }
+      setState(() {
+        pdfPath = file.path;
+      });
+    } catch (e) {
+      print("Error loading PDF: $e");
+    }
   }
 
   @override
@@ -50,67 +71,18 @@ class _EmergencyDiagnosisScreenState extends State<EmergencyDiagnosisScreen> {
                   boldText: boldText, normalText: normalText);
             }),
             const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(right: 30),
-              child: Image(
-                image: ResizeImage(
-                  const AssetImage('assets/images/chart.png'),
-                  width:
-                      screenWidth.toInt(), // Adjust the width and height according to your needs
-                  // height: 16000,
-                ),
-                fit: BoxFit.fill,
-              ),
+            Align(
+              alignment: AlignmentDirectional.center,
+              child: pdfPath != null
+                  ? SizedBox(
+                      width: screenWidth-5,
+                      height: 6800, // Adjust height as needed
+                      child: PDFView(
+                        filePath: pdfPath!,
+                      ),
+                    )
+                  : Center(child: CircularProgressIndicator()),
             ),
-
-            // const ImageComponent(
-            //   imagePath: 'assets/images/chart_page-0001.jpg',
-            //   width: 400,
-            //   height: 550,
-            // ),
-            // const Padding(
-            //     padding: EdgeInsets.only(left: 25),
-            //     child: ImageComponent(
-            //       imagePath: 'assets/images/chart_page-0002.jpg',
-            //       width: 360,
-            //       height: 550,
-            //     )),
-            // const Padding(
-            //     padding: const EdgeInsets.only(left: 28),
-            //     child: ImageComponent(
-            //       imagePath: 'assets/images/chart_page-0003.jpg',
-            //       width: 360,
-            //       height: 550,
-            //     )),
-            // const Padding(
-            //     padding: EdgeInsets.only(left: 41),
-            //     child: ImageComponent(
-            //       imagePath: 'assets/images/chart_page-0004.jpg',
-            //       width: 360,
-            //       height: 550,
-            //     )),
-            // const Padding(
-            //     padding: EdgeInsets.only(left: 70),
-            //     child: ImageComponent(
-            //       imagePath: 'assets/images/chart_page-0005.jpg',
-            //       width: 360,
-            //       height: 550,
-            //     )),
-            // const Padding(
-            //     padding: EdgeInsets.only(left: 25),
-            //     child: ImageComponent(
-            //       imagePath: 'assets/images/chart_page-0006.jpg',
-            //       width: 360,
-            //       height: 550,
-            //     )),
-            // pdfPath != null
-            //     ? Container(
-            //         height: 400, // Adjust height as needed
-            //         child: PDFView(
-            //           filePath: pdfPath!,
-            //         ),
-            //       )
-            //     : CircularProgressIndicator(),
           ],
         ),
       ),

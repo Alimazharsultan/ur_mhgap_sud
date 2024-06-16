@@ -38,7 +38,7 @@ class BaseTextComponent extends StatelessWidget {
     return Text(
       text,
       textDirection: TextDirection.rtl,
-      textAlign: textAlign,
+      textAlign: TextAlign.justify,
       style: TextStyle(
         color: color,
         fontSize: fontSize,
