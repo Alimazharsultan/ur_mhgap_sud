@@ -31,9 +31,9 @@ class _EmergencyDiagnosisScreenState extends State<EmergencyDiagnosisScreen> {
   Future<void> loadPdfFromAssets() async {
     try {
       final dir = await getApplicationDocumentsDirectory();
-      final file = File('${dir.path}/chart.pdf');
+      final file = File('${dir.path}/output_long_page.pdf');
       if (!await file.exists()) {
-        final data = await rootBundle.load('assets/files/chart.pdf');
+        final data = await rootBundle.load('assets/files/output_long_page.pdf');
         final bytes = data.buffer.asUint8List();
         await file.writeAsBytes(bytes, flush: true);
       }
@@ -66,85 +66,12 @@ class _EmergencyDiagnosisScreenState extends State<EmergencyDiagnosisScreen> {
             child: SingleChildScrollView(
               child: Column(
                 children: <Widget>[
-                  InteractiveViewer(
-                      panEnabled: true, // Enables panning
-                      minScale: 0.5, // Minimum scale factor for zoom-out
-                      maxScale: 4.0, // Maximum scale factor for zoom-in
-                      child: Column(
-                        children: [
-                          const EmergencyTitleText(
-                              redText: EmergencyDiagnosisText.titleRed,
-                              orangeText: EmergencyDiagnosisText.titleOrange),
-                          const SizedBox(height: 20),
-                          const CustomPaint(
-                            size:
-                                Size(320, 80), // Adjust size to fit your needs
-                            painter: OctagonalBadgePainter(
-                                text: EmergencyDiagnosisText.octagonalText),
-                          ),
-                          const SizedBox(height: 30),
-                          ...EmergencyDiagnosisText.emergencyBulletPoints
-                              .asMap()
-                              .entries
-                              .map((entry) {
-                            String boldText = entry.value["boldText"] as String;
-                            String normalText =
-                                entry.value["normalText"] as String;
-                            return Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 60),
-                              child: RichText(
-                                textAlign: TextAlign.justify,
-                                textDirection: TextDirection.rtl,
-                                text: TextSpan(
-                                  style: DefaultTextStyle.of(context).style,
-                                  children: <TextSpan>[
-                                    const TextSpan(
-                                      text: '\u00BB ',
-                                      style: TextStyle(
-                                        color: navigationBarColor,
-                                        fontSize: 24,
-                                        fontFamily: "Jameel",
-                                        height: 1.0,
-                                        decoration: TextDecoration.none,
-                                      ),
-                                    ),
-                                    TextSpan(
-                                      text: boldText,
-                                      style: const TextStyle(
-                                        color: bodyTextColor,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: "Nastaliq",
-                                        height: 3,
-                                        decoration: TextDecoration.none,
-                                      ),
-                                    ),
-                                    TextSpan(
-                                      text: normalText,
-                                      style: const TextStyle(
-                                        color: bodyTextColor,
-                                        fontSize: 13,
-                                        fontFamily: "Nataliq",
-                                        fontWeight: FontWeight.w400,
-                                        height: 3,
-                                        decoration: TextDecoration.none,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                          }),
-                        ],
-                      )),
-                  const SizedBox(height: 10),
                   Align(
                     alignment: AlignmentDirectional.center,
                     child: pdfPath != null
                         ? SizedBox(
                             width: screenWidth - 5,
-                            height: 5000,
+                            height: 4000,
                             child: PDFView(
                               filePath: pdfPath!,
                             ),
