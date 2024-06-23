@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mhgap_urdu/components/arrow_navigation_container.dart';
-import 'package:mhgap_urdu/components/base_scaffold.dart';
-import 'package:mhgap_urdu/components/bullet_points.dart';
-import 'package:mhgap_urdu/components/octagonal_container.dart';
-import 'package:mhgap_urdu/components/text_components.dart';
-import 'package:mhgap_urdu/utils/colors.dart';
+// import 'package:mhgap_urdu/components/base_scaffold.dart';
+// import 'package:mhgap_urdu/components/bullet_points.dart';
+// import 'package:mhgap_urdu/components/octagonal_container.dart';
+// import 'package:mhgap_urdu/components/text_components.dart';
+// import 'package:mhgap_urdu/utils/colors.dart';
 import 'package:mhgap_urdu/utils/texts.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:path_provider/path_provider.dart';
@@ -15,6 +15,7 @@ class EmergencyDiagnosisScreen extends StatefulWidget {
   const EmergencyDiagnosisScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _EmergencyDiagnosisScreenState createState() =>
       _EmergencyDiagnosisScreenState();
 }
@@ -48,7 +49,6 @@ class _EmergencyDiagnosisScreenState extends State<EmergencyDiagnosisScreen> {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       key: scaffoldKey,
       body: Stack(
@@ -70,8 +70,9 @@ class _EmergencyDiagnosisScreenState extends State<EmergencyDiagnosisScreen> {
                     alignment: AlignmentDirectional.center,
                     child: pdfPath != null
                         ? SizedBox(
-                            width: screenWidth - 5,
-                            height: 4000,
+                            width: MediaQuery.of(context).size.width,
+                            height: MediaQuery.of(context).size.height *
+                                6, // Set an explicit height
                             child: PDFView(
                               filePath: pdfPath!,
                             ),

@@ -23,6 +23,7 @@ class ThreeButtonDiagnoseScreen extends StatefulWidget {
 
 class _PsychoactiveAlcoholState extends State<ThreeButtonDiagnoseScreen> {
   String displayedText = '';
+  String boldText = '';
   double maxHeight = 0;
 
   @override
@@ -30,11 +31,13 @@ class _PsychoactiveAlcoholState extends State<ThreeButtonDiagnoseScreen> {
     super.initState();
     // Initialize the displayedText here with the first button's displayText
     displayedText = widget.buttons[widget.buttons.length - 1]["displayText"]!;
+    boldText = widget.buttons[widget.buttons.length - 1]["boldText"] ?? "";
   }
 
-  void updateText(String newText) {
+  void updateText(String newText, String newBoldText) {
     setState(() {
       displayedText = newText;
+      boldText = newBoldText;
     });
   }
 
@@ -70,6 +73,7 @@ class _PsychoactiveAlcoholState extends State<ThreeButtonDiagnoseScreen> {
                         Map<String, String> button = entry.value;
                         String buttonText = button['buttonText']!;
                         String displayText = button['displayText']!;
+                        String boldText = button['boldText'] ?? '';
                         bool isActive = displayedText == displayText;
                         GlobalKey key = GlobalKey();
 
@@ -109,7 +113,8 @@ class _PsychoactiveAlcoholState extends State<ThreeButtonDiagnoseScreen> {
                                         ),
                                 ),
                                 child: TextButton(
-                                  onPressed: () => updateText(displayText),
+                                  onPressed: () =>
+                                      updateText(displayText, boldText),
                                   style: TextButton.styleFrom(
                                     padding: const EdgeInsets.symmetric(
                                       vertical: 8.0,
@@ -133,6 +138,17 @@ class _PsychoactiveAlcoholState extends State<ThreeButtonDiagnoseScreen> {
                     ),
                   ),
                   InformationText(text: displayedText),
+                  Align(
+                      alignment: AlignmentDirectional.centerEnd,
+                      child: Padding(
+                          padding:
+                              const EdgeInsets.only(top: 10.0, left: 20, right: 20),
+                          child: BaseTextComponent(
+                              text: boldText,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              textAlign: TextAlign.right,
+                              fontSize: 16))),
                 ],
               ),
             ],

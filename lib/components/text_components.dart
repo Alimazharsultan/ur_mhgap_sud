@@ -28,7 +28,7 @@ class BaseTextComponent extends StatelessWidget {
     this.fontSize = normalTextSize,
     this.color = bodyTextColor,
     this.fontWeight = FontWeight.normal,
-    this.textAlign = TextAlign.right,
+    this.textAlign = TextAlign.justify,
     this.height = 2,
     this.fontFamily = "Nastaliq",
   });
@@ -38,7 +38,7 @@ class BaseTextComponent extends StatelessWidget {
     return Text(
       text,
       textDirection: TextDirection.rtl,
-      textAlign: TextAlign.justify,
+      textAlign: textAlign,
       style: TextStyle(
         color: color,
         fontSize: fontSize,
@@ -307,6 +307,7 @@ class DescriptionText extends StatelessWidget {
   final double fontSize;
   final double lineHeight;
   final bool showArrow;
+  final bool showBullet;
   final Color arrowColor;
   final String fontFamily;
 
@@ -319,6 +320,7 @@ class DescriptionText extends StatelessWidget {
       this.fontSize = normalTextSize,
       this.lineHeight = 2,
       this.showArrow = false,
+      this.showBullet = false,
       this.arrowColor = emergencyTextColor,
       this.fontFamily = "Nastaliq"});
 
@@ -334,6 +336,15 @@ class DescriptionText extends StatelessWidget {
             text: TextSpan(
               style: DefaultTextStyle.of(context).style,
               children: <TextSpan>[
+                if (showBullet)
+                  const TextSpan(
+                      text: '\u2022 ',
+                      style: TextStyle(
+                          color: bodyTextColor,
+                          fontSize: 24,
+                          fontFamily: "Jameel",
+                          height: 1.0,
+                          decoration: TextDecoration.none)),
                 if (showArrow)
                   TextSpan(
                       text: '\u00BB ',

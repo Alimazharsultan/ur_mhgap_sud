@@ -7,7 +7,6 @@ import 'package:mhgap_urdu/components/yes_no_buttons.dart';
 import 'package:mhgap_urdu/screens/administrative/protocol1_administrative.dart';
 import 'package:mhgap_urdu/screens/administrative/protocol2/protocol2_administrative.dart';
 import 'package:mhgap_urdu/screens/diagnoses/simple_diagnose_diagnosis.dart';
-import 'package:mhgap_urdu/components/bullet_points.dart';
 import 'package:mhgap_urdu/utils/texts.dart';
 
 class ThreeStageDiagnosisScreen extends StatelessWidget {
@@ -31,7 +30,7 @@ class ThreeStageDiagnosisScreen extends StatelessWidget {
                     text: ThirdStageDiagnosisScreenTexts.subHeading1,
                     addHorizontalPadding: true),
                 Container(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: ThirdStageDiagnosisScreenTexts.bulletPointsList1
@@ -40,7 +39,7 @@ class ThreeStageDiagnosisScreen extends StatelessWidget {
                         .map((entry) {
                       String text = entry
                           .value; // Assuming this is a correct representation of your data structure.
-                      return BulletPoint(text: text);
+                      return DescriptionText(normalText: text, showBullet: true);
                     }).toList(), // Convert the Iterable to a List.
                   ),
                 ),
@@ -49,7 +48,7 @@ class ThreeStageDiagnosisScreen extends StatelessWidget {
                     underline: true,
                     addPadding: true),
                 Container(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: ThirdStageDiagnosisScreenTexts.bulletPointsList2
@@ -57,8 +56,9 @@ class ThreeStageDiagnosisScreen extends StatelessWidget {
                         .entries
                         .map((entry) {
                       String text = entry
-                          .value; // Assuming this is a correct representation of your data structure.
-                      return BulletPoint(text: text);
+                          .value["normalText"] as String;
+                      String heading = entry.value["boldText"] as String; // Assuming this is a correct representation of your data structure.
+                      return DescriptionText(boldText: heading, normalText: text, showBullet: true);
                     }).toList(), // Convert the Iterable to a List.
                   ),
                 ),
