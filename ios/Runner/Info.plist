@@ -51,5 +51,8 @@
 	<string>App needs access to the file provider domain to save files.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>io.flutter.embedded_views_preview</key>
+	<true/>
+
 </dict>
 </plist>
