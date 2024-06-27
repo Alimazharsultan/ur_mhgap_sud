@@ -26,7 +26,7 @@ class ArrowNavigationContainer extends StatelessWidget {
 
     return Container(
       color: navigationBarColor,
-      padding: const EdgeInsets.symmetric(vertical: 5),
+      padding: const EdgeInsets.only(top: 5, bottom: 10),
       child: IntrinsicHeight(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
