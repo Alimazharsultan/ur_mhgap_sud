@@ -70,6 +70,7 @@ class ArrowNavigationContainer extends StatelessWidget {
                   text: 'نشہ آور اشیاء کا استعمال',
                   color: sideBarTextColor,
                   fontSize: normalTextSize,
+                  textAlign: TextAlign.right,
                 ),
               ),
             ),

@@ -16,6 +16,7 @@ class BaseScaffold extends StatefulWidget {
   });
 
   @override
+  // ignore: library_private_types_in_public_api
   _BaseScaffoldState createState() => _BaseScaffoldState();
 }
 
@@ -66,12 +67,13 @@ class MeasureSize extends StatefulWidget {
   final Widget child;
   final ValueChanged<Size> onChange;
 
-  const MeasureSize({
+  const MeasureSize({super.key, 
     required this.onChange,
     required this.child,
   });
 
   @override
+  // ignore: library_private_types_in_public_api
   _MeasureSizeState createState() => _MeasureSizeState();
 }
 

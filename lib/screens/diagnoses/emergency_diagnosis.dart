@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mhgap_urdu/components/arrow_navigation_container.dart';
-import 'package:flutter_pdfview/flutter_pdfview.dart';
+// import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:mhgap_urdu/utils/texts.dart';
 import 'package:pdfx/pdfx.dart';
 
@@ -8,6 +8,7 @@ class EmergencyDiagnosisScreen extends StatefulWidget {
   const EmergencyDiagnosisScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _EmergencyDiagnosisScreenState createState() =>
       _EmergencyDiagnosisScreenState();
 }
@@ -21,7 +22,6 @@ class _EmergencyDiagnosisScreenState extends State<EmergencyDiagnosisScreen> {
     _pdfController = PdfControllerPinch(
       document: PdfDocument.openAsset('assets/files/output_long_page.pdf'),
     );
-    print(_pdfController);
   }
 
   @override
