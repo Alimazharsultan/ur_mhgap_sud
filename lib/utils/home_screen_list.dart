@@ -32,7 +32,7 @@ const cardList = [
     'screenIndex': 2,
   },
   {
-    'title': 'مینجمنٹ ',
+    'title': 'انتظامی اقدامات ',
     'englishTitle': 'Management',
     'image': 'assets/images/management_icon.png',
     'image_height': 75.0,

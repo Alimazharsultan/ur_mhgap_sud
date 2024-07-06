@@ -4,7 +4,7 @@ class HomeScreenTexts {
 
 class DescriptionScreenTexts {
   static const String navigationText = 'تفصیل';
-  static const String title = 'تفصیل';
+  static const String title = 'تفصیل (Description)';
   static const String subTitle =
       'نشہ آوار اشیاء کے استعمال کےباعث  ہو نے والے امراض';
   static const List descriptions = [
@@ -43,7 +43,7 @@ class DescriptionScreenTexts {
 }
 
 class FollowupScreenTexts {
-  static const String navigationText = ' فالو اپ';
+  static const String navigationText = ' فالواپ';
   static const String title1 = 'رابطہ کی تعداد سے متعلق تجاویز';
   static const String subTitle1 = 'رابطہ کی تعداد سے متعلق تجاویز';
   static const List frequencyContactRecommendations = [
@@ -138,7 +138,7 @@ class FollowupScreenTexts {
 }
 
 class DiagnosisScreen {
-  static const String navigationText = '(Assessment) تشخیص';
+  static const String navigationText = ' تشخیص(Assessment)';
   static const String title = 'تشخیص';
 }
 
@@ -563,7 +563,7 @@ class ThirdStageDiagnosisScreenTexts {
 
 class HomeAdministrativeSreenText {
   static const navigationText = " انتظامی اقدامات";
-  static const title = " انتظامی اقدامات";
+  static const title =  " انتظامی اقدامات (Management) ";
 }
 
 class SpecialPopulationScreenText {
