@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mhgap_urdu/components/base_scaffold.dart';
 import 'package:mhgap_urdu/components/navigation_transition.dart';
@@ -6,6 +7,7 @@ import 'package:mhgap_urdu/components/text_components.dart';
 import 'package:mhgap_urdu/utils/colors.dart';
 import 'package:mhgap_urdu/utils/home_screen_list.dart';
 import 'package:mhgap_urdu/utils/texts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -88,14 +90,14 @@ class HomeScreen extends StatelessWidget {
 
 class HomeScreenContent extends StatefulWidget {
   final Widget? screen;
+
   const HomeScreenContent({super.key, this.screen});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _HomeScreenContent createState() => _HomeScreenContent();
+  _HomeScreenContentState createState() => _HomeScreenContentState();
 }
 
-class _HomeScreenContent extends State<HomeScreenContent> {
+class _HomeScreenContentState extends State<HomeScreenContent> {
   @override
   void initState() {
     super.initState();
@@ -105,6 +107,15 @@ class _HomeScreenContent extends State<HomeScreenContent> {
       Future.delayed(const Duration(milliseconds: 100), () {
         navigateWithSlideTransition(context, widget.screen!);
       });
+    }
+  }
+
+  final Uri _url =
+      Uri.parse('https://www.who.int/publications/i/item/9789241549790');
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
     }
   }
 
@@ -155,54 +166,82 @@ class _HomeScreenContent extends State<HomeScreenContent> {
           left: 0,
           right: 0,
           child: Container(
-              padding: const EdgeInsets.only(top: 20),
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 248, 245, 245),
-                borderRadius: BorderRadius.circular(8.0),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black
-                        .withOpacity(0.4), // Shadow color with opacity
-                    offset: const Offset(0, 4), // Offset for the shadow (x, y)
-                    blurRadius: 4.0, // Blur radius for the shadow
+            padding: const EdgeInsets.only(top: 20),
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 248, 245, 245),
+              borderRadius: BorderRadius.circular(8.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black
+                      .withOpacity(0.4), // Shadow color with opacity
+                  offset: const Offset(0, 4), // Offset for the shadow (x, y)
+                  blurRadius: 4.0, // Blur radius for the shadow
+                ),
+              ], // Adjust for rounded corners
+            ),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(
+                      width: 80, // set your desired width
+                      height: 80, // set your desired height
+                      child: Image.asset('assets/images/logo2.png'),
+                    ),
+                    SizedBox(
+                      width: 80,
+                      height: 80,
+                      child: Image.asset('assets/images/logo1.png'),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 5), // space between rows
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(
+                      width: 100,
+                      height: 100,
+                      child: Image.asset('assets/images/logo3.png'),
+                    ),
+                    SizedBox(
+                      width: 100,
+                      height: 100,
+                      child: Image.asset('assets/images/logo4.png'),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: Center(
+                    child: RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        text:
+                            'Source: All the content in this app is translated from official ',
+                        style:
+                            const TextStyle(color: Colors.black, fontSize: 12),
+                        children: [
+                          TextSpan(
+                            text: 'WHO website',
+                            style: const TextStyle(
+                              color: Colors.blue,
+                              decoration: TextDecoration.underline,
+                            ),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                _launchUrl();
+                              },
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                ], // Adjust for rounded corners
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        width: 80, // set your desired width
-                        height: 80, // set your desired height
-                        child: Image.asset('assets/images/logo2.png'),
-                      ),
-                      Container(
-                        width: 80,
-                        height: 80,
-                        child: Image.asset('assets/images/logo1.png'),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 5), // space between rows
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        width: 100,
-                        height: 100,
-                        child: Image.asset('assets/images/logo3.png'),
-                      ),
-                      Container(
-                        width: 100,
-                        height: 100,
-                        child: Image.asset('assets/images/logo4.png'),
-                      ),
-                    ],
-                  ),
-                ],
-              )),
+                )
+              ],
+            ),
+          ),
         ),
       ],
     );

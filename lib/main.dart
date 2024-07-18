@@ -6,7 +6,7 @@ import 'package:mhgap_urdu/screens/splash_screen.dart'; // Import the splash scr
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = SimpleBlocObserver();
-  runApp(MySplashScreenApp());
+  runApp(const MySplashScreenApp());
 }
 
 class MySplashScreenApp extends StatelessWidget {

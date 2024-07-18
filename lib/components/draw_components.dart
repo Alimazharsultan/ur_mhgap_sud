@@ -83,7 +83,7 @@ class FlowchartPainter extends CustomPainter {
     canvas.drawPath(path, paint);
 
     final textPainter = TextPainter(
-      text: TextSpan(
+      text: const TextSpan(
         text: "YES",
         style: TextStyle(
             color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
@@ -125,7 +125,7 @@ class FlowchartPainter extends CustomPainter {
     path.moveTo(startX, startY);
     path.lineTo(endX, endY);
 
-    final arrowSize = 10.0; // Arrow head size
+    const arrowSize = 10.0; // Arrow head size
     final angle = math.atan2(endY - startY, endX - startX);
 
     path.moveTo(endX, endY);
