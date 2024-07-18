@@ -19,6 +19,7 @@ class DiagnosisHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
+        showSource: false,
         title: HomeScreenTexts.navigationText,
         body: SingleChildScrollView(
           child: Padding(
@@ -27,16 +28,18 @@ class DiagnosisHomeScreen extends StatelessWidget {
               children: <Widget>[
                 const TitleText(text: DiagnosisScreen.navigationText),
                 NavigationRow(
-                    title: EmergencyDiagnosisText.navigationBarText,
-                    showBottomBar: false,
-                    // screen: EmergencyDiagnosisScreen(),
-                    onPressed: () => {
-                          navigateWithSlideTransition(
-                              context, const EmergencyDiagnosisScreen())
-                        },
-                    ),
+                  title: EmergencyDiagnosisText.navigationBarText,
+                  showBottomBar: false,
+                  // screen: EmergencyDiagnosisScreen(),
+                  onPressed: () => {
+                    navigateWithSlideTransition(
+                        context, const EmergencyDiagnosisScreen())
+                  },
+                ),
                 const ListBulletPoints(
-                    bulletPoints: EmergencyDiagnosisText.bulletPoints, isRedText: false, addHorizontalPadding: true),
+                    bulletPoints: EmergencyDiagnosisText.bulletPoints,
+                    isRedText: false,
+                    addHorizontalPadding: true),
                 const DividerLine(),
                 NavigationRow(
                   title: AppearanceDiagnosisText.title,

@@ -52,7 +52,7 @@ class _PsychoactiveAlcoholState extends State<ThreeButtonDiagnoseScreen> {
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
-      title: DiagnosisScreen.navigationText,
+      title: DiagnosisScreen.title,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),

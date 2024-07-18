@@ -17,7 +17,7 @@ class SimpleDiagnoseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
-      title: DiagnosisScreen.navigationText,
+      title: DiagnosisScreen.title,
       body: Stack(
         children: <Widget>[
           Padding(

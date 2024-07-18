@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mhgap_urdu/components/arrow_navigation_container.dart';
+import 'package:mhgap_urdu/components/sourceInformation.dart';
 
 class BaseScaffold extends StatefulWidget {
   final Widget body;
   final Widget? bottomNavigationBar;
   final String title;
   final bool showOrangeBar;
+  final bool showSource;
 
   const BaseScaffold({
     super.key,
@@ -13,6 +15,7 @@ class BaseScaffold extends StatefulWidget {
     this.bottomNavigationBar,
     required this.title,
     this.showOrangeBar = true,
+    this.showSource = true,
   });
 
   @override
@@ -49,16 +52,31 @@ class _BaseScaffoldState extends State<BaseScaffold> {
             padding: EdgeInsets.only(
               top: widget.showOrangeBar ? _navigationContainerHeight : 0,
             ),
-            child: InteractiveViewer(
-              panEnabled: true, // Enables panning
-              minScale: 0.5, // Minimum scale factor for zoom-out
-              maxScale: 4.0, // Maximum scale factor for zoom-in
-              child: widget.body,
+            child: Column(
+              children: [
+                if (widget.showSource)
+                  Container(
+                    height: 20,
+                    child: const SourceInformation(
+                      url: "https://www.who.int/publications/i/item/9789241549790",
+                    ),
+                  ),
+                Expanded(
+                  child: InteractiveViewer(
+                    panEnabled: true, // Enables panning
+                    minScale: 0.5, // Minimum scale factor for zoom-out
+                    maxScale: 4.0, // Maximum scale factor for zoom-in
+                    child: widget.body,
+                  ),
+                ),
+              ],
             ),
           ),
         ],
       ),
-      bottomNavigationBar: widget.bottomNavigationBar,
+      // bottomNavigationBar: BottomAppBar(
+      //   child: widget.bottomNavigationBar
+      // ),
     );
   }
 }
@@ -67,7 +85,8 @@ class MeasureSize extends StatefulWidget {
   final Widget child;
   final ValueChanged<Size> onChange;
 
-  const MeasureSize({super.key, 
+  const MeasureSize({
+    super.key,
     required this.onChange,
     required this.child,
   });

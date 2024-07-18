@@ -1,13 +1,12 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mhgap_urdu/components/base_scaffold.dart';
 import 'package:mhgap_urdu/components/navigation_transition.dart';
 import 'package:mhgap_urdu/components/custom_app_bar.dart';
+import 'package:mhgap_urdu/components/sourceInformation.dart';
 import 'package:mhgap_urdu/components/text_components.dart';
 import 'package:mhgap_urdu/utils/colors.dart';
 import 'package:mhgap_urdu/utils/home_screen_list.dart';
 import 'package:mhgap_urdu/utils/texts.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -110,15 +109,6 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
     }
   }
 
-  final Uri _url =
-      Uri.parse('https://www.who.int/publications/i/item/9789241549790');
-
-  Future<void> _launchUrl() async {
-    if (!await launchUrl(_url)) {
-      throw Exception('Could not launch $_url');
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -212,33 +202,9 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Center(
-                    child: RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
-                        text:
-                            'Source: All the content in this app is translated from official ',
-                        style:
-                            const TextStyle(color: Colors.black, fontSize: 12),
-                        children: [
-                          TextSpan(
-                            text: 'WHO website',
-                            style: const TextStyle(
-                              color: Colors.blue,
-                              decoration: TextDecoration.underline,
-                            ),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                _launchUrl();
-                              },
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                )
+                const SourceInformation(
+                    url:
+                        "https://www.who.int/publications/i/item/9789241549790")
               ],
             ),
           ),
@@ -273,6 +239,7 @@ class _SudHomeScreenState extends State<SudHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
+        showSource: false,
         title: HomeScreenTexts.navigationText,
         body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
