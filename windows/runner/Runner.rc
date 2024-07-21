@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
+            VALUE "CompanyName", "com.algorism" "\0"
             VALUE "FileDescription", "mhgap_urdu" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "mhgap_urdu" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 com.algorism. All rights reserved." "\0"
             VALUE "OriginalFilename", "mhgap_urdu.exe" "\0"
             VALUE "ProductName", "mhgap_urdu" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"

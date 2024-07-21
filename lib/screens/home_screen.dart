@@ -201,10 +201,7 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                       child: Image.asset('assets/images/logo4.png'),
                     ),
                   ],
-                ),
-                const SourceInformation(
-                    url:
-                        "https://www.who.int/publications/i/item/9789241549790")
+                )
               ],
             ),
           ),
@@ -239,7 +236,7 @@ class _SudHomeScreenState extends State<SudHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
-        showSource: false,
+        showSource: true,
         title: HomeScreenTexts.navigationText,
         body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
