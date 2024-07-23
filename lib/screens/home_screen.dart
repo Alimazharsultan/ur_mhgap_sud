@@ -184,24 +184,25 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                       height: 80,
                       child: Image.asset('assets/images/logo1.png'),
                     ),
-                  ],
-                ),
-                const SizedBox(height: 5), // space between rows
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset('assets/images/logo3.png'),
-                    ),
                     SizedBox(
                       width: 100,
                       height: 100,
                       child: Image.asset('assets/images/logo4.png'),
                     ),
                   ],
-                )
+                ),
+                
+                const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    child: Center(
+                        child: BaseTextComponent(
+                          fontSize: 8,
+                          height: 1,
+                      text:
+                          'Disclaimer: This translation was not created by the World Health Organization (WHO). WHO is not responsible for the content or accuracy of this translation. The original edition “mhGAP Intervention Guide - Version 2.0” shall be the binding and authentic edition',
+                      textAlign: TextAlign.center,
+                    ))),
+                const SizedBox(height: 5), // space between rows
               ],
             ),
           ),
